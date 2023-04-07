@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Tela2"
+    android:background="#000">
+
+    <TextView
+        android:id="@+id/Curso"
+        android:textAlignment="center"
+        android:layout_width="410sp"
+        android:layout_height="100sp"
+        android:text="Curso de Java"
+        android:textSize="50sp"
+        android:textColor="#ff00"
+        android:textStyle="italic"/>
+
+
+    <TextView
+        android:id="@+id/Introdução"
+        android:layout_width="400sp"
+        android:layout_height="72sp"
+        android:textColor="#336699"
+        android:text="Curso de Java, do início ao avançado em poucos meses, seu furuto na programação tem a nossa garantia!!"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        app:srcCompat="@drawable/java" />
+
+    <TextView
+        android:id="@+id/Clique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#336699"
+        android:text="Clique no botão abaixo para fazer o seu cadastro e receber novas informações"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/Botao"
+        android:layout_width="match_parent"
+        android:layout_height="91sp"
+        android:drawableBottom="#ff0000"
+        android:text="CADASTRAR"
+        android:textColor="#ff00"
+        android:textSize="24sp"
+        app:backgroundTint="#363636"
+        tools:layout_editor_absoluteX="match_parent"
+        tools:layout_editor_absoluteY="333dp" />
+
+</LinearLayout>
