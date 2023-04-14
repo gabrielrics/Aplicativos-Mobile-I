@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                tela2();
+                Tela2();
 
             }
         });
     }
 
-    private void tela2(){
+    private void Tela2(){
 
 
         Intent it = new Intent(  this, Tela2.class);

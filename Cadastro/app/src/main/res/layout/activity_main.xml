@@ -50,7 +50,7 @@
     <Button
         android:id="@+id/Botao"
         android:layout_width="match_parent"
-        android:layout_height="91sp"
+        android:layout_height="125dp"
         android:drawableBottom="#ff0000"
         android:text="CADASTRAR"
         android:textColor="#ff00"

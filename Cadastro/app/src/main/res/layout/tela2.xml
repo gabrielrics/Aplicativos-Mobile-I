@@ -84,13 +84,11 @@
                 android:layout_height="wrap_content"
                 android:ems="10" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="120sp"
-        app:srcCompat="@drawable/java2" />
 
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <Button
         android:id="@+id/Limpar"
         android:layout_width="match_parent"
@@ -106,5 +104,20 @@
         android:text="ENVIAR"
         android:background="#20B2AA" />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".Tela2">
+
+    <ListView
+        android:id="@+id/listViewPessoa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+        </LinearLayout>
 
 </LinearLayout>
