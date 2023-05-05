@@ -20,12 +20,6 @@
 
 
 
-    <EditText
-            android:id="@+id/txtCodigo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="Código" />
 
     <TextView
         android:id="@+id/txtnome"
