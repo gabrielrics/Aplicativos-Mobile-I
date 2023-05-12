@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btInicio;
 
+        //Esse código faz o botão na primeira página ficar funcional (para entrar para a segunda tela).
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

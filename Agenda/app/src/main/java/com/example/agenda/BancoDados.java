@@ -11,6 +11,7 @@ public class BancoDados extends SQLiteOpenHelper {
     public static final int VERSAO_BANCO = 1;
     public static final String BANCO_AGENDA = "db_agenda";
 
+
     public BancoDados(Context content) {
         super(content, BANCO_AGENDA, null, VERSAO_BANCO);
     }
@@ -24,6 +25,7 @@ public class BancoDados extends SQLiteOpenHelper {
     public static final String COLUNA_ENDERECO = "endereco";
 
 
+        // Criando a tabela do banco de dados
     @Override
     public void onCreate(SQLiteDatabase db) { //esse "db" pode ser qualquer nome, porém foi colocado pq é o resumo de "database".
 
@@ -43,6 +45,7 @@ public class BancoDados extends SQLiteOpenHelper {
 
     }
 
+    // Adicionar todos os dados que foram inseridos.
     void addPessoa(Pessoa pessoa) {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -59,6 +62,7 @@ public class BancoDados extends SQLiteOpenHelper {
 
     }
 
+    //Apagar as informações da pessoa do banco.
     void apagarPessoa(Pessoa pessoa) {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -69,6 +73,8 @@ public class BancoDados extends SQLiteOpenHelper {
         db.close();
     }
 
+
+    //Pegar uma conta.
     Pessoa selecionarPessoa(int codigo) {
 
         SQLiteDatabase db = this.getWritableDatabase();
