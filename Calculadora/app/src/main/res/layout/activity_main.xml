@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+
+    <TextView android:text="Digite o primeiro número"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/digite1"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        android:textSize="20sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ednumero1"
+                android:layout_below="@+id/digite1"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Digite o segundo número"
+        android:id="@+id/digite2"
+        android:layout_below="@+id/ednumero1"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/ednumero2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/digite2"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/white" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Somar"
+                    android:id="@+id/btsomar"
+                    android:layout_below="@+id/ednumero2"
+                    android:layout_alignParentLeft="true"
+                    android:backgroundTint="@color/teal_200"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtrair"
+                    android:id="@+id/btsubstrair"
+                    android:layout_below="@+id/btsomar"
+                    android:layout_alignParentLeft="true"
+                    android:backgroundTint="#FF335B"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Multiplicar"
+                    android:id="@+id/btmultiplicar"
+                    android:layout_below="@+id/btsubstrair"
+                    android:layout_alignParentLeft="true"
+                    android:backgroundTint="#FFFB00"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dividir"
+                    android:id="@+id/btdividir"
+                    android:layout_below="@+id/btmultiplicar"
+                    android:layout_alignParentLeft="true"
+                    android:backgroundTint="#1BFF00"
+                    android:textColor="@color/black"/>
+
+
+</RelativeLayout>
