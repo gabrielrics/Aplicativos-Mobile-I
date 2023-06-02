@@ -1,30 +1,33 @@
-package com.example.agenda;
+package com.example.projetoagenda;
 
 public class Pessoa {
 
-    private int codigo;
-    private String Nome;
-    private String celular;
-    private String telefone;
-    private String email;
-    private String endereco;
+    int codigo;
+    String nome;
+    String telefone;
+    String email;
+    String endereco;
 
 
-    public Pessoa(int codigo, String nome, String celular, String telefone, String email, String endereco) {
+
+
+    public Pessoa(int codigo, String nome, String telefone, String email, String endereco) {
         this.codigo = codigo;
-        this.Nome = nome;
-        this.celular = celular;
+        this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
     }
 
-    public Pessoa(String nome, String celular, String telefone, String email, String endereco) {
-        this.Nome = nome;
-        this.celular = celular;
+    public Pessoa(String nome, String telefone, String email, String endereco) {
+        this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
+    }
+
+    public Pessoa() {
+
     }
 
 
@@ -37,19 +40,11 @@ public class Pessoa {
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
+        this.nome = nome;
     }
 
     public String getTelefone() {
