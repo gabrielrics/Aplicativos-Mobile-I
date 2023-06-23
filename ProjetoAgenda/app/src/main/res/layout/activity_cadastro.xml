@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#00bfff"
     tools:context=".Cadastro">
 
 
@@ -22,11 +23,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="244dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="center|center_horizontal|center_vertical"
-        android:background="@drawable/ic_launcher_background"
-        app:srcCompat="@android:drawable/ic_menu_call" />
+        android:background="@drawable/estrela"/>
 
     <EditText
         android:id="@+id/txtCodigo"
