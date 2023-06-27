@@ -5,26 +5,25 @@ public class Pessoa {
     private int codigo;
     private String Nome;
     private String celular;
-    private String telefone;
-    private String email;
-    private String endereco;
+
+    private String valor;
+
+    private String CPF;
 
 
-    public Pessoa(int codigo, String nome, String celular, String telefone, String email, String endereco) {
+    public Pessoa(int codigo, String nome, String celular, String valor, String CPF) {
         this.codigo = codigo;
         this.Nome = nome;
         this.celular = celular;
-        this.telefone = telefone;
-        this.email = email;
-        this.endereco = endereco;
+        this.valor = valor;
+        this.CPF = CPF;
     }
 
-    public Pessoa(String nome, String celular, String telefone, String email, String endereco) {
+    public Pessoa(String nome, String celular, String valor, String CPF) {
         this.Nome = nome;
         this.celular = celular;
-        this.telefone = telefone;
-        this.email = email;
-        this.endereco = endereco;
+        this.valor = valor;
+        this.CPF = CPF;
     }
 
 
@@ -53,26 +52,30 @@ public class Pessoa {
     }
 
     public String getTelefone() {
-        return telefone;
+        return valor;
     }
 
     public void setTelefone(String telefone) {
-        this.telefone = telefone;
+        this.valor = telefone;
     }
 
     public String getEmail() {
-        return email;
+        return CPF;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.CPF = email;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public void setCPF(String string) {
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setValor(String string) {
+    }
+
+    public byte[] getCPF() {
+    }
+
+    public byte[] getValor() {
     }
 }

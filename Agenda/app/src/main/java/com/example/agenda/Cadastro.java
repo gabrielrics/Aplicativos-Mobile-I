@@ -1,5 +1,6 @@
 package com.example.agenda;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,12 +21,17 @@ public class Cadastro extends AppCompatActivity {
 
     EditText Codigo;
     EditText Nome;
-    EditText Telefone;
-    EditText Email;
+    EditText Celular;
+    EditText Valor;
+
+    EditText CPF;
     EditText Endereco;
-    Button btnSalvar;
-    Button btnExcluir;
-    Button btnLimpar;
+
+    Button bntSalvar;
+
+    Button bntExcluir;
+
+    Button bntLimpar;
     ListView viewPessoa;
 
     ArrayAdapter<String> adapter;
@@ -35,26 +41,32 @@ public class Cadastro extends AppCompatActivity {
 
     BancoDados db = new BancoDados(this);
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         imm = (InputMethodManager) this.getSystemService(Service.INPUT_METHOD_SERVICE);
 
-        Codigo = findViewById(R.id.cadastro);
+        Codigo = findViewById(R.id.Cadastro);
 
         Nome = findViewById(R.id.edt_nome);
-        Telefone = findViewById(R.id.edt_celular);
-        Email = findViewById(R.id.edt_email);
-        Endereco = findViewById(R.id.edt_endereco);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnExcluir = findViewById(R.id.btnExcluir);
-        btnLimpar = findViewById(R.id.btnLimpar);
+        Celular = findViewById(R.id.edt_celular);
+        Valor = findViewById(R.id.edt_valor);
+        Endereco = findViewById(R.id.edt_CPF);
+        bntSalvar = findViewById(R.id.bntSalvar);
+        bntExcluir = findViewById(R.id.bntExcluir);
+        bntLimpar = findViewById(R.id.bntLimpar);
         viewPessoa = findViewById(R.id.listViewPessoa);
 
         Nome.requestFocus();
 
         viewPessoa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, int position, long id) {
@@ -66,12 +78,13 @@ public class Cadastro extends AppCompatActivity {
 
                 Codigo.setText(String.valueOf(pessoa.getCodigo()));
                 Nome.setText(pessoa.getNome());
-                Telefone.setText(pessoa.getTelefone());
-                Email.setText(pessoa.getEmail());
-                Endereco.setText(pessoa.getEndereco());
+                Celular.setText(pessoa.getCelular());
+                Valor.setText(pessoa.getValor());
+                CPF.setText(pessoa.getCPF());
+
             }
         });
-        btnLimpar.setOnClickListener(new View.OnClickListener() {
+        bntLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 limparCampos();
@@ -79,21 +92,21 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
+        bntSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 String codigo = Codigo.getText().toString();
                 String nome = Nome.getText().toString();
-                String telefone = Telefone.getText().toString();
-                String email = Email.getText().toString();
-                String endereco = Endereco.getText().toString();
+                String telefone = Celular.getText().toString();
+                String email = Valor.getText().toString();
+                String endereco = CPF.getText().toString();
 
                 if (nome.isEmpty()) {
                     Nome.setError("Este campo é obrigatorio");
                 } else if (codigo.isEmpty()) {
 
-                    db.addPessoa(new Pessoa(nome, telefone, email, endereco));
+                    db.addPessoa(new Pessoa(nome, celular, valor, CPF));
                     Toast.makeText(Cadastro.this, "Cadastro salvo com sucesso", Toast.LENGTH_SHORT).show();
                     listarPessoas();
                     limparCampos();
@@ -110,7 +123,7 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        btnExcluir.setOnClickListener(new View.OnClickListener() {
+        bntExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -139,9 +152,9 @@ public class Cadastro extends AppCompatActivity {
     public void limpaCampos(){
         Codigo.setText("");
         Nome.setText("");
-        Telefone.setText("");
-        Email.setText("");
-        Endereco.setText("");
+        Celular.setText("");
+        Valor.setText("");
+        CPF.setText("");
 
         Nome.requestFocus();
     }

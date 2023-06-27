@@ -19,7 +19,7 @@
             android:id="@+id/txAGENDA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="AGENDA"
+            android:text="Doações"
             android:textAlignment="center"
             android:textColor="#1B1DEB"
             android:textSize="80dp" />

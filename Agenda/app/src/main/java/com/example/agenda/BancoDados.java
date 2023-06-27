@@ -24,9 +24,10 @@ public class BancoDados extends SQLiteOpenHelper {
 
     public static final String COLUNA_CODIGO = "codigo";
     public static final String COLUNA_NOME = "nome";
-    public static final String COLUNA_EMAIL = "email";
-    public static final String COLUNA_TELEFONE = "telefone";
-    public static final String COLUNA_ENDERECO = "endereco";
+    public static final String COLUNA_VALOR = "valor";
+    public static final String COLUNA_CELULAR = "celular";
+
+    public static final String COLUNA_CPF = "CPF";
 
 
     // Criando a tabela do banco de dados
@@ -36,9 +37,9 @@ public class BancoDados extends SQLiteOpenHelper {
         String CRIAR_TABELA = "CREATE TABLE " + TABELA_PESSOA + "("
                 + COLUNA_CODIGO + "INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUNA_NOME + "TEXT,"
-                + COLUNA_EMAIL + "TEXT,"
-                + COLUNA_TELEFONE + "TEXT,"
-                + COLUNA_ENDERECO + "TEXT)";
+                + COLUNA_VALOR + "TEXT,"
+                + COLUNA_CELULAR + "TEXT,"
+                + COLUNA_CPF + "TEXT)";
 
         db.execSQL(CRIAR_TABELA);
 
@@ -57,9 +58,9 @@ public class BancoDados extends SQLiteOpenHelper {
         ContentValues valor = new ContentValues();
 
         valor.put(COLUNA_NOME, pessoa.getNome());
-        valor.put(COLUNA_EMAIL, pessoa.getEmail());
-        valor.put(COLUNA_TELEFONE, pessoa.getTelefone());
-        valor.put(COLUNA_ENDERECO, pessoa.getEndereco());
+        valor.put(COLUNA_CELULAR, pessoa.getCelular());
+        valor.put(COLUNA_VALOR, pessoa.getValor());
+        valor.put(COLUNA_CPF, pessoa.getCPF());
 
         db.insert(TABELA_PESSOA, null, valor);
         db.close();
@@ -82,7 +83,7 @@ public class BancoDados extends SQLiteOpenHelper {
     Pessoa selecionarPessoa(int codigo) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABELA_PESSOA, new String[]{COLUNA_CODIGO, COLUNA_NOME, COLUNA_EMAIL, COLUNA_TELEFONE, COLUNA_ENDERECO},
+        Cursor cursor = db.query(TABELA_PESSOA, new String[]{COLUNA_CODIGO, COLUNA_NOME, COLUNA_VALOR, COLUNA_CELULAR, COLUNA_CPF},
                 COLUNA_CODIGO + "=?", new String[]{String.valueOf(codigo)}, null, null, null, null);
 
         if (cursor != null) {
@@ -102,9 +103,9 @@ public class BancoDados extends SQLiteOpenHelper {
         ContentValues valor = new ContentValues();
 
         valor.put(COLUNA_NOME, pessoa.getNome());
-        valor.put(COLUNA_EMAIL, pessoa.getEmail());
-        valor.put(COLUNA_TELEFONE, pessoa.getTelefone());
-        valor.put(COLUNA_ENDERECO, pessoa.getEndereco());
+        valor.put(COLUNA_VALOR, pessoa.getValor());
+        valor.put(COLUNA_CELULAR, pessoa.getCelular());
+        valor.put(COLUNA_CELULAR, pessoa.getCPF());
 
         db.update(TABELA_PESSOA, valor, COLUNA_CODIGO + " =?", new String[]{String.valueOf(pessoa.getCodigo())});
 
@@ -128,9 +129,9 @@ public class BancoDados extends SQLiteOpenHelper {
 
                 pessoa.setCodigo(Integer.parseInt(cursor.getString(0) != null ? cursor.getString(0) : "0"));
                 pessoa.setNome(cursor.getString(1));
-                pessoa.setTelefone(cursor.getString(2));
-                pessoa.setEmail(cursor.getString(3));
-                pessoa.setEndereco(cursor.getString(4));
+                pessoa.setValor(cursor.getString(2));
+                pessoa.setCelular(cursor.getString(3));
+                pessoa.setCPF(cursor.getString(4));
 
                 pessoaLista.add(pessoa);
 

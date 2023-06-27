@@ -12,7 +12,7 @@
             android:id="@+id/Cadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastro"
+            android:text="Cadastro de doações"
             android:textAlignment="center"
             android:textColor="#ff5722"
             android:textSize="36sp"
@@ -48,27 +48,27 @@
         android:ems="10" />
 
     <TextView
-        android:id="@+id/txt_email"
+        android:id="@+id/txt_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="E-Mail:"
+        android:text="Valor:"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edt_email"
+        android:id="@+id/edt_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" />
 
         <TextView
-            android:id="@+id/txt_endereco"
+            android:id="@+id/txt_CPF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Endereço"
+            android:text="CPF"
             android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edt_endereco"
+        android:id="@+id/edt_CPF"
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:ems="10" />
