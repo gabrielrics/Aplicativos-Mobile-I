@@ -11,10 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 public class Cadastro extends AppCompatActivity {
@@ -23,14 +26,9 @@ public class Cadastro extends AppCompatActivity {
     EditText Nome;
     EditText Celular;
     EditText Valor;
-
     EditText CPF;
-    EditText Endereco;
-
     Button bntSalvar;
-
     Button bntExcluir;
-
     Button bntLimpar;
     ListView viewPessoa;
 
@@ -53,7 +51,7 @@ public class Cadastro extends AppCompatActivity {
         Nome = findViewById(R.id.edt_nome);
         Celular = findViewById(R.id.edt_celular);
         Valor = findViewById(R.id.edt_valor);
-        Endereco = findViewById(R.id.edt_CPF);
+        CPF = findViewById(R.id.edt_CPF);
         bntSalvar = findViewById(R.id.bntSalvar);
         bntExcluir = findViewById(R.id.bntExcluir);
         bntLimpar = findViewById(R.id.bntLimpar);
@@ -90,6 +88,9 @@ public class Cadastro extends AppCompatActivity {
                 limparCampos();
 
             }
+
+            private void limparCampos() {
+            }
         });
 
         bntSalvar.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +107,7 @@ public class Cadastro extends AppCompatActivity {
                     Nome.setError("Este campo é obrigatorio");
                 } else if (codigo.isEmpty()) {
 
-                    db.addPessoa(new Pessoa(nome, celular, valor, CPF));
+                    db.addPessoa(new Pessoa(nome, Celular, Valor, CPF));
                     Toast.makeText(Cadastro.this, "Cadastro salvo com sucesso", Toast.LENGTH_SHORT).show();
                     listarPessoas();
                     limparCampos();

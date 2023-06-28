@@ -71,6 +71,7 @@ public class BancoDados extends SQLiteOpenHelper {
     void apagarPessoa(Pessoa pessoa) {
 
         SQLiteDatabase db = this.getWritableDatabase();
+
         db.delete(TABELA_PESSOA, COLUNA_CODIGO + "=?", new String[]{
                 String.valueOf(pessoa.getCodigo())
         });
@@ -105,12 +106,14 @@ public class BancoDados extends SQLiteOpenHelper {
         valor.put(COLUNA_NOME, pessoa.getNome());
         valor.put(COLUNA_VALOR, pessoa.getValor());
         valor.put(COLUNA_CELULAR, pessoa.getCelular());
-        valor.put(COLUNA_CELULAR, pessoa.getCPF());
+        valor.put(COLUNA_CPF, pessoa.getCPF());
 
         db.update(TABELA_PESSOA, valor, COLUNA_CODIGO + " =?", new String[]{String.valueOf(pessoa.getCodigo())});
 
         db.close();
     }
+
+
 
     public List<Pessoa> listaPessoa() {
 

@@ -2,12 +2,10 @@ package com.example.agenda;
 
 public class Pessoa {
 
-    private int codigo;
+    int codigo;
     private String Nome;
     private String celular;
-
     private String valor;
-
     private String CPF;
 
 
@@ -19,11 +17,8 @@ public class Pessoa {
         this.CPF = CPF;
     }
 
-    public Pessoa(String nome, String celular, String valor, String CPF) {
-        this.Nome = nome;
-        this.celular = celular;
-        this.valor = valor;
-        this.CPF = CPF;
+    public Pessoa() {
+
     }
 
 
@@ -51,20 +46,20 @@ public class Pessoa {
         this.celular = celular;
     }
 
-    public String getTelefone() {
+    public String getValor() {
         return valor;
     }
 
-    public void setTelefone(String telefone) {
-        this.valor = telefone;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     public String getEmail() {
         return CPF;
     }
 
-    public void setEmail(String email) {
-        this.CPF = email;
+    public void setEmail(String CPF) {
+        this.CPF = CPF;
     }
 
     public void setCPF(String string) {
@@ -73,9 +68,8 @@ public class Pessoa {
     public void setValor(String string) {
     }
 
-    public byte[] getCPF() {
+    public int getCPF() {
+        return 0;
     }
 
-    public byte[] getValor() {
-    }
 }
