@@ -65,8 +65,7 @@ public class Pessoa {
     public void setCPF(String string) {
     }
 
-    public void setValor(String string) {
-    }
+
 
     public int getCPF() {
         return 0;

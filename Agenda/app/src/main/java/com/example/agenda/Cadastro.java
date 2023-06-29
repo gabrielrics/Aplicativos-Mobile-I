@@ -107,7 +107,8 @@ public class Cadastro extends AppCompatActivity {
                     Nome.setError("Este campo é obrigatorio");
                 } else if (codigo.isEmpty()) {
 
-                    db.addPessoa(new Pessoa(nome, Celular, Valor, CPF));
+                    String valor;
+                    db.addPessoa(new Pessoa(Nome, Celular, Valor, CPF));
                     Toast.makeText(Cadastro.this, "Cadastro salvo com sucesso", Toast.LENGTH_SHORT).show();
                     listarPessoas();
                     limparCampos();
@@ -159,6 +160,7 @@ public class Cadastro extends AppCompatActivity {
 
         Nome.requestFocus();
     }
+
         public void listarPessoas() {
 
             List<Pessoa> pessoas = db.listaPessoa();
