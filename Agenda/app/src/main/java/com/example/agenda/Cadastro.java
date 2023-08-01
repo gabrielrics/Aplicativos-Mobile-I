@@ -110,14 +110,14 @@ public class Cadastro extends AppCompatActivity {
                     String valor;
                     db.addPessoa(new Pessoa(Nome, Celular, Valor, CPF));
                     Toast.makeText(Cadastro.this, "Cadastro salvo com sucesso", Toast.LENGTH_SHORT).show();
-                    listarPessoas();
+                    listaPessoa();
                     limparCampos();
                     escondeTeclado();
 
                 } else {
                     db.atualizarPessoa(new Pessoa(Integer.parseInt(codigo), nome, telefone, email, endereco));
                     Toast.makeText(Cadastro.this, "Cadastro atualizado com sucesso", Toast.LENGTH_SHORT).show();
-                    listarPessoas();
+                    listaPessoa();
                     limpaCampos();
                     escondeTeclado();
 
@@ -139,7 +139,7 @@ public class Cadastro extends AppCompatActivity {
                     db.apagarPessoa(pessoa);
                     Toast.makeText(Cadastro.this, "Registro da pessoa apagada com sucesso", Toast.LENGTH_SHORT).show();
                     Codigo.setText("");
-                    listarPessoas();
+                    listaPessoa();
                     limpaCampos();
                 }
 
@@ -161,7 +161,7 @@ public class Cadastro extends AppCompatActivity {
         Nome.requestFocus();
     }
 
-        public void listarPessoas() {
+        public void listaPessoa(){
 
             List<Pessoa> pessoas = db.listaPessoa();
 
@@ -177,7 +177,6 @@ public class Cadastro extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
 
-
         }
-        }
+    }
 }

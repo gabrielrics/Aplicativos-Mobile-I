@@ -26,7 +26,6 @@ public class BancoDados extends SQLiteOpenHelper {
     public static final String COLUNA_NOME = "nome";
     public static final String COLUNA_VALOR = "valor";
     public static final String COLUNA_CELULAR = "celular";
-
     public static final String COLUNA_CPF = "CPF";
 
 
